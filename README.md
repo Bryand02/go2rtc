@@ -50,6 +50,13 @@ cam1:
   - rtsp://admin:123456@192.168.1.101:554/Streaming/Channels/101#timeout=30
 ```
 
+Ejemplo de cambio local en el servidor para `cam1`:
+
+```yaml
+cam1:
+  - rtsp://USUARIO_REAL:CLAVE_REAL@192.168.1.88:554/stream2#timeout=30
+```
+
 ## 3. Despliegue en Linux
 
 ```bash
@@ -96,3 +103,4 @@ curl http://127.0.0.1:1985/
 - La version usada queda fijada en `1.9.14`, publicada el 19 de enero de 2026.
 - Si una camara tiene stream inestable, puedes cambiar su fuente a `ffmpeg:rtsp://...` mas adelante.
 - `config/go2rtc.yaml` queda fuera de Git para que puedas editar camaras en produccion sin romper futuros `git pull`.
+- No subas URLs RTSP reales con usuario y clave al repo si es publico; dejalas solo en `config/go2rtc.yaml` dentro del servidor.
