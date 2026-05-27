@@ -1,0 +1,26 @@
+api:
+  listen: ":1984"
+
+rtsp:
+  listen: ":8554"
+
+webrtc:
+  listen: ":8555"
+  candidates:
+    - SERVER_IP_O_DNS:8555
+
+streams:
+  cam1:
+    - rtsp://USUARIO:CLAVE@IP_CAMARA_1:554/stream1#timeout=30
+
+  cam2:
+    - rtsp://USUARIO:CLAVE@IP_CAMARA_2:554/stream1#timeout=30
+
+  cam3:
+    - rtsp://USUARIO:CLAVE@IP_CAMARA_3:554/stream1#timeout=30
+
+  cam4:
+    - rtsp://USUARIO:CLAVE@IP_CAMARA_4:554/stream1#timeout=30
+
+  cam5:
+    - rtsp://USUARIO:CLAVE@IP_CAMARA_5:554/stream1#timeout=30

@@ -1,0 +1,19 @@
+services:
+  go2rtc:
+    image: alexxit/go2rtc:${GO2RTC_VERSION}
+    container_name: go2rtc
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "${GO2RTC_API_PORT}:1984"
+      - "${GO2RTC_RTSP_PORT}:8554"
+      - "${GO2RTC_WEBRTC_PORT}:8555/tcp"
+      - "${GO2RTC_WEBRTC_PORT}:8555/udp"
+    volumes:
+      - ./config/go2rtc.yaml:/config/go2rtc.yaml
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
