@@ -15,9 +15,9 @@ Crea un archivo `.env` a partir de `.env.example`.
 
 ```env
 GO2RTC_VERSION=1.9.14
-GO2RTC_API_PORT=1984
-GO2RTC_RTSP_PORT=8554
-GO2RTC_WEBRTC_PORT=8555
+GO2RTC_API_PORT=1985
+GO2RTC_RTSP_PORT=8556
+GO2RTC_WEBRTC_PORT=8557
 ```
 
 ## 2. Configurar el servidor
@@ -47,17 +47,18 @@ docker compose up -d
 
 ## 4. Puertos a abrir
 
-- `1984/tcp` panel web y API
-- `8554/tcp` salida RTSP
-- `8555/tcp` y `8555/udp` WebRTC
+- `1985/tcp` panel web y API
+- `8556/tcp` salida RTSP
+- `8557/tcp` y `8557/udp` WebRTC
 
 ## 5. Verificacion
 
-- Web UI: `http://IP_DEL_SERVIDOR:1984/`
-- RTSP local: `rtsp://IP_DEL_SERVIDOR:8554/cam1`
+- Web UI: `http://IP_DEL_SERVIDOR:1985/`
+- RTSP local: `rtsp://IP_DEL_SERVIDOR:8556/cam1`
 
 ## Notas
 
+- Esta base usa por defecto `1985`, `8556` y `8557` para evitar conflicto con el `go2rtc` interno de Home Assistant.
 - Si el servidor va detras de NAT o proxy, `webrtc.candidates` debe apuntar a la IP o dominio alcanzable por el cliente.
 - La version usada queda fijada en `1.9.14`, publicada el 19 de enero de 2026.
 - Si una camara tiene stream inestable, puedes cambiar su fuente a `ffmpeg:rtsp://...` mas adelante.
