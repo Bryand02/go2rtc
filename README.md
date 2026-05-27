@@ -24,11 +24,18 @@ GO2RTC_WEBRTC_PORT=8557
 
 Edita `config/go2rtc.yaml` y cambia:
 
-- `SERVER_IP_O_DNS` por la IP o dominio del servidor
 - `USUARIO`
 - `CLAVE`
 - `IP_CAMARA_1` a `IP_CAMARA_5`
 - `/stream1` por la ruta RTSP real de cada camara
+
+La IP actual del servidor ya queda definida como:
+
+```yaml
+webrtc:
+  candidates:
+    - 192.168.48.2:8555
+```
 
 Ejemplo:
 
@@ -53,8 +60,8 @@ docker compose up -d
 
 ## 5. Verificacion
 
-- Web UI: `http://IP_DEL_SERVIDOR:1985/`
-- RTSP local: `rtsp://IP_DEL_SERVIDOR:8556/cam1`
+- Web UI: `http://192.168.48.2:1985/`
+- RTSP local: `rtsp://192.168.48.2:8556/cam1`
 
 ## Notas
 

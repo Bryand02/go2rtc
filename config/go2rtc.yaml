@@ -7,7 +7,7 @@ rtsp:
 webrtc:
   listen: ":8555"
   candidates:
-    - SERVER_IP_O_DNS:8555
+    - 192.168.48.2:8555
 
 streams:
   cam1:
